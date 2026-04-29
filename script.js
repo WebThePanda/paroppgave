@@ -1,4 +1,11 @@
-const movies = ['Dune', 'Parasite', 'Spider-Verse', 'Kon-Tiki', 'Barbie', 'Doctor Strange in the Multiverse of Madness'];
+const movies = [
+    'Dune', 
+    'Parasite', 
+    'Spider-Verse', 
+    'Kon-Tiki', 
+    'Barbie', 
+    'Doctor Strange in the Multiverse of Madness'
+];
 const list = document.getElementById('movies-list');
 const input = document.getElementById('new-title');
 const counter = document.getElementById('counter');
@@ -19,6 +26,7 @@ document.getElementById('new-movie').addEventListener('submit', function(event) 
     deleteBtn.textContent = "x";
     deleteBtn.addEventListener('click', function() {
         span.remove();
+        updateCounter();
     });
 
     list.appendChild(span);
@@ -42,6 +50,7 @@ function showMovies() {
         deleteBtn.textContent = "x";
         deleteBtn.addEventListener('click', function() {
             span.remove();
+            updateCounter();
         })
         
         list.appendChild(span);
