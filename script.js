@@ -25,7 +25,13 @@ document.getElementById('new-movie').addEventListener('submit', function(event) 
 
     deleteBtn.textContent = "x";
     deleteBtn.addEventListener('click', function() {
+        const index = movies.indexOf(text)
         span.remove();
+        console.log(text)
+        console.log(index)
+        if (index > -1) {
+            movies.splice(index, 1)
+        }
         updateCounter();
     });
 
@@ -33,23 +39,30 @@ document.getElementById('new-movie').addEventListener('submit', function(event) 
     span.appendChild(deleteBtn);
 
     movies.push(text);
-    console.log(movies)
+    console.log(movies);
 
     input.value = '';
-    updateCounter()
+    updateCounter();
 });
 
 function showMovies() {
     for (i in movies) {
         const span = document.createElement('span');
         const deleteBtn = document.createElement('button');
+        const j = movies[i]
         
         span.textContent = movies[i];
         span.classList = "movie-card";
 
         deleteBtn.textContent = "x";
         deleteBtn.addEventListener('click', function() {
+            const index = movies.indexOf(j)
             span.remove();
+            console.log(j)
+            console.log(index)
+            if (index > -1) {
+                movies.splice(index, 1)
+            }
             updateCounter();
         })
         
